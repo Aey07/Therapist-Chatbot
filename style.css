@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; 
+}
+
+.corner-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.corner-image {
+    position: absolute;
+    width: 150px; 
+    height: auto;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.landing-page {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    position: relative; 
+}
+
+.landing-page h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.landing-page p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.container {
+    --light-color: ghostwhite;
+    height: 600px;
+    width: 750px;
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 15px black;
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: height 0.3s ease, width 0.3s ease; 
+}
+
+.container.collapse {
+    height: 56px;
+    width: 290px;
+}
+
+.chat-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px; 
+    background-color: black;
+    color: var(--light-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-header .logo {
+    height: 35px;
+    width: 35px;
+    box-shadow: 0px 0px 10px 0px black;
+    margin-right: 10px; 
+}
+
+.chat-header img {
+    height: 100%;
+}
+
+.chat-header .title {
+    flex: 1;
+}
+
+.chat-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    position: relative;
+}
+
+.chat-input {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+    background-color: #f9f9f9; 
+    position: relative;
+}
+
+.input-sec {
+    flex: 9;
+}
+
+.send {
+    flex: 1;
+    padding-right: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.send img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#txtinput {
+    line-height: 30px;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    caret-color: rgb(0, 0, 0);
+    font-size: 1rem;
+    width: 100%;
+    background-color: ghostwhite; 
+    border-radius: 4px; 
+}
+
+.chatbot-message,
+.user-message {
+    padding: 8px;
+    background-color: dimgrey;
+    margin: 5px;
+    max-width: 70%; 
+    word-wrap: break-word; 
+    border-radius: 10px 3px 10px 10px;
+    color: #000000;
+}
+
+.user-message {
+    align-self: flex-start; 
+    opacity: 0;
+    animation: fade-in-left 0.3s ease-in-out both;
+}
+
+.bot-message {
+    padding: 8px;
+    background-color: black;
+    margin: 5px;
+    max-width: 70%; 
+    word-wrap: break-word;
+    border-radius: 10px 3px 10px 10px;
+    color: ghostwhite;
+    align-self: flex-end;
+    opacity: 0;
+    animation: fade-in-right 0.3s ease-in-out both;
+}
+
+.loading {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 65px;
+    right: 10px;
+    height: 30px;   
+    padding-right: 300px; 
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black; 
+    margin: 5px;
+    animation: scale 0.5s infinite alternate;
+}
+
+.circle-1 {
+    animation-delay: 0.1s;
+}
+
+.circle-2 {
+    animation-delay: 0.2s;
+}
+
+.circle-3 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fade-in-left {
+    0% {
+        transform: translate(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-right {
+    0% {
+        transform: translate(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.hide {
+    display: none !important;
+}
